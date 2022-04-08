@@ -2,26 +2,41 @@ const path = require('path')
 
 const NODE_MANIFEST_COUNT = 10
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage, unstable_createNodeManifest } = actions
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+  const { createNode, unstable_createNodeManifest } = actions
 
+  let i = 0
+  while (i < NODE_MANIFEST_COUNT) {
+    console.log(`creating node manifest: ${i}`)
 
-  let i = NODE_MANIFEST_COUNT
-  while (i > 0) {
+    const nodeId = createNodeId(`fake-node-${i}`)
+
+    await createNode({
+      id: nodeId,
+      internal: {
+        contentDigest: createContentDigest(`content-digest-for-node-${i}`),
+        type: `HugeNodeManifestField`,
+      }
+    })
+
     unstable_createNodeManifest({
-      manifestId: `fake-one-${1}`,
+
+      manifestId: `fake-one-${i}`,
       updatedAtUTC: new Date().toUTCString(),
       node: {
-        id: `fake-node-${1}`,
+        id: nodeId,
       },
       plugin: {
         name: `gatsby-source-your-mom`,
       },
     })
 
-    i--
+    i++
   }
+}
 
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.js')
