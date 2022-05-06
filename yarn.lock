@@ -8775,10 +8775,10 @@ gatsby-worker@1.13.0-next.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@4.13.0-alpha-image-cdn-telemetry.30:
-  version "4.13.0-alpha-image-cdn-telemetry.30"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.13.0-alpha-image-cdn-telemetry.30.tgz#f72256cefe044c0dceedf06a8c6da8605bf3335a"
-  integrity sha512-ibwKkIDmrqfEYrARXKsm1e0jgX0CfvBY0nLB6aGhLys76Mlb1YHKYLQ7LJDaetv8/rtdPoFUCVc99DRBa/buPA==
+gatsby@4.13.0-alpha-image-cdn-telemetry.34:
+  version "4.13.0-alpha-image-cdn-telemetry.34"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.13.0-alpha-image-cdn-telemetry.34.tgz#dddd776d250dbdbb869d334fc87cf131b0517d6f"
+  integrity sha512-4Q+Pmi7kq/au4ZWA7J+UGdsZ/7uPLuyG8GF/2BzsAV82WChHi+D0fM9HI7kBQb5E4TNXyarlk6S3DcDcvzQVIQ==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"

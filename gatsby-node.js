@@ -86,3 +86,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 }
+
+exports.onPostBuild = ({ store }) => {
+  console.log(`onPostBuild store value`, store.getState().telemetry)
+}
+
